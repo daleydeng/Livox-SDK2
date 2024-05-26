@@ -1,0 +1,29 @@
+context:
+  version: 1.2.5
+  name: livox-sdk
+
+package:
+  name: "{{ name }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/Livox-SDK/Livox-SDK2/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 38d65c969788285f298227fbd954eb253e2816e4a6a93a9bfc624cf91fb5e75a
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - "{{ compiler('cxx') }}"
+    - cmake
+
+about:
+  home: https://github.com/Livox-SDK/Livox-SDK2
+  license: MIT
+  summary: livox lidars SDK
+  description: |
+    Livox SDK2 is a software development kit designed for all Livox lidars such as HAP and Mid-360. 
+    It is developed based on C/C++ following Livox SDK2 Communication Protocol, 
+    and provides easy-to-use C style APIs. With the Livox SDK2, users can quickly 
+    connect to the Livox Lidars and receive point cloud data.
