@@ -1,0 +1,37 @@
+diff --git a/sdk_core/comm/define.h b/sdk_core/comm/define.h
+index 66996bf..2de41ff 100644
+--- a/sdk_core/comm/define.h
++++ b/sdk_core/comm/define.h
+@@ -31,6 +31,7 @@
+ #include <functional>
+ #include <vector>
+ #include <atomic>
++#include <cstdint>
+ 
+ #include "livox_lidar_def.h"
+ 
+diff --git a/sdk_core/command_handler/command_impl.cpp b/sdk_core/command_handler/command_impl.cpp
+index d45391b..49ded8a 100644
+--- a/sdk_core/command_handler/command_impl.cpp
++++ b/sdk_core/command_handler/command_impl.cpp
+@@ -24,6 +24,8 @@
+ 
+ #include "command_impl.h"
+ 
++#include <cinttypes>
++
+ #include "livox_lidar_def.h"
+ #include "general_command_handler.h"
+ #include "debug_point_cloud_handler/debug_point_cloud_manager.h"
+diff --git a/sdk_core/logger_handler/file_manager.h b/sdk_core/logger_handler/file_manager.h
+index 242a431..14cd76a 100644
+--- a/sdk_core/logger_handler/file_manager.h
++++ b/sdk_core/logger_handler/file_manager.h
+@@ -28,6 +28,7 @@
+ #include <string>
+ #include <vector>
+ #include <map>
++#include <cstdint>
+ 
+ namespace livox {
+ namespace lidar {

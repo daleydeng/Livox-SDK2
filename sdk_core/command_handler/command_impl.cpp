@@ -24,6 +24,8 @@
 
 #include "command_impl.h"
 
+#include <cinttypes>
+
 #include "livox_lidar_def.h"
 #include "general_command_handler.h"
 #include "debug_point_cloud_handler/debug_point_cloud_manager.h"

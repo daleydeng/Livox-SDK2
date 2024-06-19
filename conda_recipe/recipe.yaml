@@ -1,26 +1,29 @@
-# build with https://github.com/mamba-org/boa
+# build with https://github.com/prefix-dev/rattler-build
 context:
   version: 1.2.5
   name: livox-sdk
 
 package:
-  name: "{{ name }}"
-  version: "{{ version }}"
+  name: ${{ name }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/Livox-SDK/Livox-SDK2/archive/refs/tags/v{{ version }}.tar.gz
+  url: "https://github.com/Livox-SDK/Livox-SDK2/archive/refs/tags/v${{ version }}.tar.gz"
   sha256: 38d65c969788285f298227fbd954eb253e2816e4a6a93a9bfc624cf91fb5e75a
+  patches:
+    - fix_types.patch
 
 build:
   number: 1
 
 requirements:
   build:
-    - "{{ compiler('cxx') }}"
+    - ${{ compiler('cxx') }}
     - cmake
+    - ninja
 
 about:
-  home: https://github.com/Livox-SDK/Livox-SDK2
+  homepage: https://github.com/Livox-SDK/Livox-SDK2
   license: MIT
   summary: livox lidars SDK
   description: |
